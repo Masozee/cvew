@@ -8,7 +8,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Centre for Strategic and International Studies" />
     <meta name="description" content="CVEW Dataset is a comprehensive monitoring tool and early warning system for collective violence and conflict in Indonesia.">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
     <title>CVEW - Collective Violence Early Warning.</title>
@@ -125,10 +125,10 @@
                     <div class="portfolio-item img-zoom">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
-                                <a href="https://newsletter.csis.or.id/cvew"><img src="{% static 'images/dataset.png' %}" alt=""></a>
+                                <a href="{% static 'doc/CVEW_Dataset_(2021).xlsx' %}"><img src="{% static 'images/dataset.png' %}" alt=""></a>
                             </div>
                             <div class="portfolio-description">
-                                <a href="https://newsletter.csis.or.id/cvew">
+                                <a href="{% static 'doc/CVEW_Dataset_(2021).xlsx' %}">
                                     <h3>Download the Dataset</h3>
                                     <span>in CSV</span>
                                 </a>
@@ -158,7 +158,7 @@
                                 <a href="#"><img src="{% static 'images/codebook.png' %}" alt=""></a>
                             </div>
                             <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
+                                <a href="{% static 'doc/CVEW_Dataset_Codebook_(Indonesia).pdf' %}">
                                     <h3>Dataset Codebook</h3>
                                     <span>and technical glossaries</span>
                                 </a>
@@ -487,6 +487,7 @@
                     "properties": {
                         "ID": 2,
                         "density": 52,
+
                         "name": "NUSATENGGARA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
