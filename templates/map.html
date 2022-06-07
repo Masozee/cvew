@@ -18916,7 +18916,7 @@
         };
     </script>
     <script type="text/javascript">
-        var map = L.map('map').setView([0.7893, 113.9213], 4);
+        var map = L.map('map').setView([0.8298, 114.0813], 5);
 
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -18934,7 +18934,7 @@
 
         info.update = function(props) {
             this._div.innerHTML = '<h4>Collective Violence Early Warning (CVEW) Dataset </h4>' + (props ?
-                '<b>' + props.name + '</b><br />' + props.density + ' Occurrence ' + '<br />' + props.cassualities + ' Casualties ' : 'Hover over a Province');
+                '<b>' + props.name + '</b><br />' + props.density + ' Occurence ' + '<br />' + props.cassualities + ' Casualties ' : 'Hover over a Province');
         };
 
         info.addTo(map);
