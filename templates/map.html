@@ -6230,7 +6230,8 @@
                     "id": 14,
                     "properties": {
                         "ID": 19,
-                        "density": 14,
+                        "density": 25,
+                        "cassualities": 19,
                         "name": "RIAU",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -7696,7 +7697,8 @@
                     "id": 21,
                     "properties": {
                         "ID": 76,
-                        "density": 21,
+                        "density": 25,
+                        "cassualities": 25,
                         "name": "KEPULAUAN RIAU",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -7808,7 +7810,8 @@
                     "id": 76,
                     "properties": {
                         "ID": 77,
-                        "density": 76,
+                        "density": 2,
+                        "cassualities": 1,
                         "name": "SULAWESI BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -8342,7 +8345,8 @@
                     "id": 72,
                     "properties": {
                         "ID": 20,
-                        "density": 72,
+                        "density": 18,
+                        "cassualities": 24,
                         "name": "SULAWESI TENGAH",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -8538,7 +8542,8 @@
                     "id": 71,
                     "properties": {
                         "ID": 22,
-                        "density": 71,
+                        "density": 14,
+                        "cassualities": 14,
                         "name": "SULAWESI UTARA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -10849,7 +10854,8 @@
                     "id": 92,
                     "properties": {
                         "ID": 23,
-                        "density": 92,
+                        "density": 21,
+                        "cassualities": 44,
                         "name": "PAPUA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11164,7 +11170,8 @@
                     "id": 12,
                     "properties": {
                         "ID": 24,
-                        "density": 12,
+                        "density": 57,
+                        "cassualities": 75,
                         "name": "SUMATERA UTARA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11340,7 +11347,8 @@
                     "id": 19,
                     "properties": {
                         "ID": 25,
-                        "density": 19,
+                        "density": 15,
+                        "cassualities": 17,
                         "name": "BANGKA BELITUNG",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11597,6 +11605,7 @@
                     "properties": {
                         "ID": 26,
                         "density": 13,
+                        "cassualities": 14,
                         "name": "SUMATERA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11834,7 +11843,8 @@
                     "id": 16,
                     "properties": {
                         "ID": 28,
-                        "density": 16,
+                        "density": 99,
+                        "cassualities": 99,
                         "name": "SUMATERA SELATAN",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -18915,7 +18925,7 @@
 
         info.update = function(props) {
             this._div.innerHTML = '<h4>Collective Violence Early Warning (CVEW) Dataset </h4>' + (props ?
-                '<b>' + props.name + '</b><br />' + props.density + ' Occurrence ' + '<br />' + props.cassualities + ' Cassualities ' : 'Hover over a Province');
+                '<b>' + props.name + '</b><br />' + props.density + ' Occurrence ' + '<br />' + props.cassualities + ' Casualties ' : 'Hover over a Province');
         };
 
         info.addTo(map);
