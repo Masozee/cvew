@@ -20,6 +20,10 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
 
     <style>
+        a:hover {
+            color: #E8A117 !important;
+        }
+        
         #map {
             width: 100%;
             height: 500px;
@@ -85,7 +89,7 @@
                         <div class="container">
                             <nav>
                                 <ul>
-                                    <li><a href="{% url 'home' %}">CSIS Collective Violence Early Warning Dataset</a></li>
+                                    <li><a href="{% url 'home' %}" class="gld">CSIS Collective Violence Early Warning Dataset</a></li>
                                 </ul>
                             </nav>
                         </div>
