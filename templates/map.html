@@ -231,7 +231,7 @@
                                 <h5 class="ac-title">CONTACT</h5>
                                 <div class="ac-content">
                                     <p>Questions related to the dataset can be addressed to:</p>
-                                    <p>Lina A. Alexandra. Head of the Department of International Relations, Centre for Strategic and International Studies</p>
+                                    <p><b>Alif Satria.</b> Researcher, Department of Politics and Social Change, Centre for Strategic and International Studies</p>
                                     <p>alif.satria@csis.or.id</p>
                                 </div>
                             </div>
@@ -18950,10 +18950,10 @@
 
         // get color depending on population density value
         function getColor(d) {
-            return d > 150 ? '#661F00' :
-                d > 100 ? '#A1390C' :
-                d > 50 ? '#DC5217' :
-                d > 10 ? '#F25F1D' : '#FFAB81';
+            return d > 150 ? '#e93e3a' :
+                d > 100 ? '#ed683c' :
+                d > 50 ? '#f3903f' :
+                d > 10 ? '#fdc70c' : '#fff33b';
         }
 
         function style(feature) {
@@ -18962,7 +18962,7 @@
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 0.7,
+                fillOpacity: 0.8,
                 fillColor: getColor(feature.properties.density)
             };
         }
