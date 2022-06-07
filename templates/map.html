@@ -5142,7 +5142,8 @@
                     "id": 91,
                     "properties": {
                         "ID": 16,
-                        "density": 91,
+                        "density": 53,
+                        "cassualities": 199,
                         "name": "PAPUA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -5684,7 +5685,8 @@
                     "id": 53,
                     "properties": {
                         "ID": 17,
-                        "density": 53,
+                        "density": 18,
+                        "cassualities": 16,
                         "name": "NUSA TENGGARA TIMUR",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -5759,7 +5761,8 @@
                     "id": 51,
                     "properties": {
                         "ID": 18,
-                        "density": 51,
+                        "density": 17,
+                        "cassualities": 15,
                         "name": "BALI",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -18908,7 +18911,7 @@
 
         info.update = function(props) {
             this._div.innerHTML = '<h4>Collective Violence Early Warning (CVEW) Dataset </h4>' + (props ?
-                '<b>' + props.name + '</b><br />' + props.density + ' Occurrence ' : 'Hover over a Province');
+                '<b>' + props.name + '</b><br />' + props.density + ' Occurrence ' + '<br />' + props.cassualities + ' Cassualities ' : 'Hover over a Province');
         };
 
         info.addTo(map);
