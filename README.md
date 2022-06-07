@@ -1,0 +1,4 @@
+<h1>Reviving National Violence Database as Early-Warning Mechanism for Atrocities Prevention in Indonesia<h1>
+Despite the absence of any major atrocity case, Indonesia is host to several concerning risk factors. The prevalence of intolerant acts against minority groups, extremist groups, economic and social inequalities, and records of past human rights abuses are among the risks that need to be seriously monitored for them not to escalate.
+
+As atrocity does not happen overnight, preventing these risks’ escalation at the earliest stage is key. In this regard, monitoring trends on the volume and forms of violence happening across Indonesia would be crucial to provide stakeholders early warning notice of possible escalation and increasing their capacity to better and more quickly perform atrocities prevention.
