@@ -7,7 +7,7 @@ from .models import *
 
 def home(request):
    
-    return render(request, "index.html",)
+    return render(request, "map.html",)
 
 class index(TemplateView):
     template_name= 'map.html'
