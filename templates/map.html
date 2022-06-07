@@ -18916,7 +18916,7 @@
         };
     </script>
     <script type="text/javascript">
-        var map = L.map('map').setView([0.1298, 118.0813], 5);
+        var map = L.map('map').setView([-2.025, 118.0813], 5);
 
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -18942,10 +18942,10 @@
 
         // get color depending on population density value
         function getColor(d) {
-            return d > 150 ? '#29589E' :
-                d > 100 ? '#4EB3D3' :
-                d > 50 ? '#A8DDB5' :
-                d > 10 ? '#E0F3DB' : '#F7FCF0';
+            return d > 150 ? '#661F00' :
+                d > 100 ? '#A1390C' :
+                d > 50 ? '#DC5217' :
+                d > 10 ? '#F25F1D' : '#FFAB81';
         }
 
         function style(feature) {
