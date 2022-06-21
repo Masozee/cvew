@@ -9,11 +9,7 @@ def home(request):
    
     return render(request, "map.html",)
 
-class index(TemplateView):
-    template_name= 'map.html'
-
-    def get_context_data(self, **kwargs):
-        context =  super().get_context_data(**kwargs)
-        context["qs"] = province.objects.all()
-        return context
+def home_id(request):
+   
+    return render(request, "index_id.html",)
 

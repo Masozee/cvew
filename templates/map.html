@@ -85,6 +85,20 @@
                         </a>
                     </div>
                     <!--End: Logo-->
+                    <div class="header-extras">
+                        <ul>
+                            
+                            <li>
+                                <div class="p-dropdown"> <a href="#"><i class="icon-globe"></i><span>EN</span></a>
+                                    <ul class="p-dropdown-content">
+                                        <li><a href="{% url 'home_id' %}">Indonesia</a></li>
+                                        <li><a href="{% url 'home_id' %}">English</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
                     <!--Navigation Resposnive Trigger-->
                     <div id="mainMenu-trigger">
                         <a class="lines-button x"><span class="lines"></span></a>
@@ -168,7 +182,7 @@
                                 <a href="#"><img src="{% static 'images/codebook.png' %}" alt=""></a>
                             </div>
                             <div class="portfolio-description">
-                                <a href="{% static 'doc/CVEW_Dataset_Codebook_(Indonesia).pdf' %}">
+                                <a href="{% static 'doc/CVEW_Dataset_Codebook_(English).pdf' %}">
                                     <h3>Dataset Codebook</h3>
                                     <span>and technical glossaries</span>
                                 </a>

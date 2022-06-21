@@ -1,35 +1,37 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Choropleth Tutorial - Leaflet</title>
-
-    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Centre for Strategic and International Studies" />
+    <meta name="description" content="CVEW Dataset is a comprehensive monitoring tool and early warning system for collective violence and conflict in Indonesia.">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>CVEW - Collective Violence Early Warning.</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="{% static 'css/plugins.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-RNSY7QC7K1');
+        </script>
     <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
+        a:hover {
+            color: #E8A117 !important;
         }
         
-        .leaflet-container {
-            height: 400px;
-            width: 600px;
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
-
-    <style>
         #map {
-            width: 800px;
+            width: 100%;
             height: 500px;
         }
         
@@ -61,12 +63,231 @@
             opacity: 0.7;
         }
     </style>
+
+
+
 </head>
 
-<body>
+<body class="boxed-simple">
 
-    <div id='map'></div>
 
+    <!-- Body Inner -->
+    <div class="body-inner">
+        <!-- Header -->
+        <header id="header" class="header-modern">
+            <div class="header-inner">
+                <div class="container">
+                    <!--Logo-->
+                    <div id="logo">
+                        <a href="{% url 'home' %}">
+                            <span class="logo-default">CVEW</span>
+                            <span class="logo-dark">CVEW</span>
+                        </a>
+                    </div>
+                    <!--End: Logo-->
+                    <div class="header-extras">
+                        <ul>
+                            
+                            <li>
+                                <div class="p-dropdown"> <a href="#"><i class="icon-globe"></i><span>ID</span></a>
+                                    <ul class="p-dropdown-content">
+                                        <li><a href="{% url 'home_id' %}">Indonesia</a></li>
+                                        <li><a href="{% url 'home' %}">English</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!--Navigation Resposnive Trigger-->
+                    <div id="mainMenu-trigger">
+                        <a class="lines-button x"><span class="lines"></span></a>
+                    </div>
+                    <!--end: Navigation Resposnive Trigger-->
+                    <!--Navigation-->
+                    <div id="mainMenu">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="{% url 'home' %}" class="gld">Database Kekerasan CSIS</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--end: Navigation-->
+                </div>
+            </div>
+        </header>
+        <!-- end: Header -->
+
+        <!-- WELCOME -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h2 class="text-medium m-t-0">Database Kekerasan CSIS</h2>
+                        <div class="seperator"></div>
+                        <p class="lead">Database <strong>Collective Violence Early Warning (CVEW)</strong> / Sistem Peringatan Dini Kekerasan Kolektif merupakan alat pemantauan komprehensif dan sistem peringatan dini untuk kekerasan kolektif serta konflik di Indonesia</p>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="flourish-embed flourish-chart" data-src="visualisation/10252761">
+                            <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id='map'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="seperator"></div>
+                <!-- Portfolio -->
+                <div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="20">
+                    <!-- portfolio item -->
+                    <div class="portfolio-item img-zoom">
+                        <div class="portfolio-item-wrap">
+                            <div class="portfolio-image">
+                                <a href="https://newsletter.csis.or.id/cvew"><img src="{% static 'images/dataset.png' %}" alt=""></a>
+                            </div>
+                            <div class="portfolio-description">
+                                <a href="https://newsletter.csis.or.id/cvew">
+                                    <h3>Download the Dataset</h3>
+                                    <span>in CSV</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end: portfolio item -->
+                    <!-- portfolio item -->
+                    <div class="portfolio-item img-zoom">
+                        <div class="portfolio-item-wrap">
+                            <div class="portfolio-image">
+                                <a href="#"><img src="{% static 'images/report.png' %}" alt=""></a>
+                            </div>
+                            <div class="portfolio-description">
+                                <a href="#">
+                                    <h3>AVAILABLE SOON</h3>
+                                    <span>in August 2022</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end: portfolio item -->
+                    <!-- portfolio item -->
+                    <div class="portfolio-item img-zoom">
+                        <div class="portfolio-item-wrap">
+                            <div class="portfolio-image">
+                                <a href="#"><img src="{% static 'images/codebook.png' %}" alt=""></a>
+                            </div>
+                            <div class="portfolio-description">
+                                <a href="{% static 'doc/CVEW_Dataset_Codebook_(Indonesia).pdf' %}">
+                                    <h3>Dataset Codebook</h3>
+                                    <span>and technical glossaries</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end: portfolio item -->
+                </div>
+            </div>
+        </section>
+        <!-- end: WELCOME -->
+
+        <!-- ACCORDION & TEXT -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3>Mengenai Proyek</h3>
+                        <div class="accordion toggle fancy clean">
+                            <div class="ac-item">
+                                <h4 class="ac-title">LATAR BELAKANG</h4>
+                                <div class="ac-content">
+                                    <p>Temuan dari penelitian CSIS di tahun 2020 mengenai Pembentukan Jaringan Nasional untuk Pencegahan Kekejaman yang didanai oleh APR2P menyatakan bahwa mayoritas pemangku kepentingan umumnya memandang bahwa mekanisme pemantauan dan pengukuran kekerasan akan sangat bermanfaat bagi inisiatif pencegahan kekejaman di Indonesia. Mekanisme ini sangat penting seiring Indonesia mendekati tahun pemilihan umum serentak di 2024 – sebuah peristiwa yang berisiko meningkatkan konflik sosial karena umumnya penggunaan narasi identitas oleh calon kandidat sebagai jalan pintas untuk memenangkan kontestasi politik. Sayangnya, Indonesia saat ini tidak memiliki data tentang seberapa cepat kekerasan ini berisiko tereskalasi karena tidak memiliki alat pemantauan kekerasan yang dapat digunakan sebagai indikator risiko.</p>
+                                    <p>Hingga tahun 2014, Indonesia bergantung kepada National Violence Monitoring System (NVMS) sebagai alat pemantauan. Mekanisme tersebut dibangun oleh Bank Dunia dengan dukungan The Habibie Center dan pendanaan dari Korea Selatan. Dataset NVMS mengumpulkan berita dari berbagai media lokal untuk memberikan basis data yang komprehensif dan terperinci mengenai kekerasan di Indonesia kepada para pemangku kepentingan. NVMS secara resmi diserahkan kepada Kementerian Koordinator Bidang Kesejahteraan Sosial, dan kemudian di bawah pemerintahan Presiden Widodo, dikelola oleh Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan. Sayangnya, karena berbagai alasan, pengumpulan data untuk NVMS berakhir pada Maret 2015. </p>
+                                    <p>Meskipun terdapat beberapa himpunan data yang menggantikan NVMS sebagai alat pemantauan kekerasan yang komprehensif di Indonesia, mereka memiliki beberapa keterbatasan. Dalam lingkup internasional, terdapat himpunan data seperti Armed Conflict Location and Event Data (ACLED) atau The Political Instability Task Force (PITF) Worldwide Atrocities Dataset yang merekam berbagai insiden kekerasan dan instabilitas politik secara global. Akan tetapi, himpunan data tersebut tidak cukup spesifik untuk memahami kekerasan di Indonesia. Tidak hanya mereka menghiraukan berita berskala lokal, kodifikasi data tersebut juga tidak disesuaikan untuk mengidentifikasi tren krusial yang dibutuhkan Indonesia dalam sistem peringatan dininya – misalnya apakah terdapat intervensi pemerintah dan berhasil dalam deeskalasi insiden. </p>
+                                    <p>Secara nasional, terdapat beberapa himpunan data seperti Database Terorisme dan Kontra-Terorisme Indonesia (DETEKSI) milik The Habibie Center yang merekam serangan teroris, basis data internal KontraS yang merekam kekerasan oleh aparat keamanan Indonesia, atau Laporan Kemerdekaan Beragama dan Berkeyakinan (KBB) milik Wahid Foundation yang merekam kekerasan bermotif agama. Akan tetapi, tidak ada satupun dari data ini yang secara cukup komprehensif dalam tipe kekerasan yang mereka catat untuk bertindak sebagai mekanisme peringatan dini nasional. Lebih lanjut lagi, karena masing-masing basis data ini menggunakan metode pengumpulan dan pengkodean data yang berbeda, sulit bagi para pemangku kepentingan untuk menggabungkan data-data tersebut dan mengembangkan satu penilaian yang komprehensif. </p>
+                                    <p>Melihat kurangnya basis data pemantauan kekerasan yang komprehensif dan sesuai dengan salah satu temuan utama dalam studi CSIS pada tahun 2020, maka sangat penting untuk menghidupkan kembali NVMS sehingga Indonesia memiliki data yang komprehensif mengenai konflik kekerasan sebagai dasar bagi pengembangan kerja Jaringan. Hal ini akan sangat penting untuk mengidentifikasi area berpotensi konflik di Indonesia dan memungkinkan pemangku kepentingan untuk memeriksa kemungkinan eskalasi dari faktor-faktor risiko. Kepemilikan data pemantauan juga akan membantu pemerintah dan pemangku kepentingan lainnya untuk mengevaluasi, merencanakan, dan mengimplementasikan Rencana Aksi Nasional (RAN) tentang Manajemen Konflik Sosial (2014) dan Pencegahan Ekstremisme (2021).</p>
+                                </div>
+                            </div>
+                            <div class="ac-item  ">
+                                <h5 class="ac-title">TUJUAN</h5>
+                                <div class="ac-content">Proyek ini bertujuan untuk mengembangkan <strong>Collective Violence Early Warning Database</strong>  yang bertindak sebagai mekanisme peringatan dini. Dataset ini merekam semua insiden kekerasan kolektif di seluruh provinsi Indonesia dan menganalisis berbagai aspek dari kekerasan tersebut dengan menggunakan sumber-sumber berita nasional dan lokal. Sistem pemantauan ini akan mengumpulkan, melakukan kategorisasi, dan memberikan visualisasi data berdasarkan UN Framework of Analysis for Atrocity Crimes (Kerangka Analisis PBB untuk Kejahatan Kekejaman) dan Rencana Aksi Nasional serta  regulasi yang ada di Indonesia untuk melindungi hak asasi manusia dan mencegah konflik.</div>
+                            </div>
+                            <div class="ac-item">
+                                <h5 class="ac-title">AKTIVITAS</h5>
+                                <div class="ac-content">
+                                    <p>TTim mengembangkan dataset ini dalam tiga fase kegiatan. Untuk tahap pertama, proyek ini membangun codebook dan sistem pengumpulan data yang merincikan definisi, variabel, dan kategori informasi yang akan direkam. Dalam tahapan kedua, proyek ini memulai pengumpulan data untuk menciptakan basis data mengenai insiden kekerasan di Indonesia dari sumber media daring, lokal dan bereputasi (Kompas, Grup Jawa Pos, dan berbagai koran lokal). Basis data ini akan mulai merekam kekerasan pada Januari 2021. </p>
+                                    <p>Dalam tahap ketiga, ketika pengumpulan data telah mencatat setidaknya setahun insiden kekerasan, analisis dan visualisasi periodik akan dibuat untuk mengidentifikasi tren kekerasan di Indonesia per bulan yang akan diberikan kepada pemangku kepentingan pencegahan kekejaman untuk membuka kesempatan kepada mereka untuk menggunakan sistem pemantauan yang ada untuk tugas mereka. </p>
+                                   
+                                </div>
+                            </div>
+                            <div class="ac-item ac-active">
+                                <h5 class="ac-title">KONTAK</h5>
+                                <div class="ac-content">
+                                    <p>Pertanyaan terkait himpunan data ini dapat diarahkan kepada:</p>
+                                    <p><b>Alif Satria.</b> Peneliti, Departemen Politik dan Perubahan Sosial, Centre for Strategic and International Studies</p>
+                                    <p>alif.satria@csis.or.id</p>
+                                </div>
+                            </div>
+                            <div class="ac-item">
+                                <h5 class="ac-title">KUTIPAN YANG DISARANKAN</h5>
+                                <div class="ac-content">
+                                    <p>Lina Alexandra, Fitriani, dan Alif Satria, “Collective Violence Early Warning (CVEW) Dataset,” CSIS Indonesia, (2021).</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h3>Menghidupkan Kembali Database Kekerasan Nasional Sebagai Mekanisme Peringatan Dini Pencegahan Kekejaman di Indonesia</h3>
+                        <p>Meskipun Indonesia tidak memiliki kasus kekejaman massal berskala besar, terdapat beberapa faktor risiko yang mengkhawatirkan. Tindakan intoleran terhadap kelompok minoritas, kelompok ekstremis, ketidaksetaraan ekonomi dan sosial, serta catatan pelanggaran hak asasi manusia di masa lalu merupakan beberapa risiko yang harus dipantau dengan serius agar tidak terjadi eskalasi. </p>
+                        <p>Kasus kekejaman massal tidak terjadi secara tiba-tiba. Dengan demikian, pencegahan risiko eskalasi sedini mungkin merupakan hal yang kunci. Dalam hal ini, pemantauan tren volume dan bentuk kekerasan yang terjadi di seluruh Indonesia merupakan suatu hal penting untuk memberikan peringatan dini kepada pemangku kepentingan mengenai kemungkinan eskalasi, serta meningkatkan kapasitas mereka untuk melakukan pencegahan kekejaman dengan lebih baik dan cepat. </p>
+                        <div class="row">
+                            <div class="seperator"></div>
+                            <div class="col-lg-4">
+                                <a href="https://csis.or.id"><img src="{% static 'images/csis.png' %}" class="img-fluid m-300" alt=""></a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="https://appap.group.uq.edu.au/"><img src="{% static 'images/appap.png' %}" class="img-fluid m-300" alt=""></a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="https://r2pasiapacific.org/"><img src="{% static 'images/apr2p.jpg' %}" class="img-fluid m-300" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end: ACCORDION & TEXT -->
+
+        <div class="seperator m-b-0"></div>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="copyright-text text-center">© 2022 CVEW - Collective Violence Early Warning Dataset - <a href="https://www.csis.or.id" target="_blank" rel="noopener">CSIS Indonesia</a> </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end: FOOTER -->
+
+    </div>
+    <!-- end: Body Inner -->
+
+    <!-- Scroll top -->
+    <a id="scrollTop" class="scroll-to" href="body"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+
+    <!--Plugins-->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+
+    <!--Template functions-->
+    <script src="{% static 'js/functions.js' %}"></script>
     <script type="text/javascript">
         var statesData = {
             "type": "FeatureCollection",
@@ -271,8 +492,9 @@
                     "id": 52,
                     "properties": {
                         "ID": 2,
-                        "density": 52,
-                        "name": "NUSATENGGARA BARAT",
+                        "density": 22,
+                        "cassualities": 24,
+                        "name": "NUSA TENGGARA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
                 }, {
@@ -369,7 +591,8 @@
                     "id": 75,
                     "properties": {
                         "ID": 3,
-                        "density": 75,
+                        "density": 4,
+                        "cassualities": 6,
                         "name": "GORONTALO",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -727,7 +950,8 @@
                     "id": 74,
                     "properties": {
                         "ID": 4,
-                        "density": 74,
+                        "density":11,
+                        "cassualities": 25,
                         "name": "SULAWESI TENGGARA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -772,7 +996,8 @@
                     "id": 34,
                     "properties": {
                         "ID": 5,
-                        "density": 34,
+                        "density": 28,
+                        "cassualities": 29,
                         "name": "DAERAH ISTIMEWA YOGYAKARTA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -940,7 +1165,8 @@
                     "id": 33,
                     "properties": {
                         "ID": 6,
-                        "density": 33,
+                        "density": 19,
+                        "cassualities": 25,
                         "name": "JAWA TENGAH",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -1043,7 +1269,8 @@
                     "id": 36,
                     "properties": {
                         "ID": 7,
-                        "density": 36,
+                        "density": 39,
+                        "cassualities": 34,
                         "name": "BANTEN",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -1321,7 +1548,8 @@
                     "id": 35,
                     "properties": {
                         "ID": 8,
-                        "density": 35,
+                        "density": 178,
+                        "cassualities": 131,
                         "name": "JAWA TIMUR",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -1838,7 +2066,8 @@
                     "id": 82,
                     "properties": {
                         "ID": 9,
-                        "density": 82,
+                        "density": 23,
+                        "cassualities": 35,
                         "name": "MALUKU UTARA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -2716,7 +2945,8 @@
                     "id": 81,
                     "properties": {
                         "ID": 10,
-                        "density": 81,
+                        "density": 38,
+                        "cassualities": 47,
                         "name": "MALUKU",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -3096,7 +3326,8 @@
                     "id": 73,
                     "properties": {
                         "ID": 13,
-                        "density": 73,
+                        "density": 81,
+                        "cassualities": 79,
                         "name": "SULAWESI SELATAN",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -3127,7 +3358,8 @@
                     "id": 31,
                     "properties": {
                         "ID": 14,
-                        "density": 31,
+                        "density": 77,
+                        "cassualities": 80,
                         "name": "DKI JAKARTA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -3253,7 +3485,8 @@
                     "id": 32,
                     "properties": {
                         "ID": 15,
-                        "density": 32,
+                        "density": 105,
+                        "cassualities": 146,
                         "name": "JAWA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -4915,7 +5148,8 @@
                     "id": 91,
                     "properties": {
                         "ID": 16,
-                        "density": 91,
+                        "density": 98,
+                        "cassualities": 176,
                         "name": "PAPUA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -5457,7 +5691,8 @@
                     "id": 53,
                     "properties": {
                         "ID": 17,
-                        "density": 53,
+                        "density": 47,
+                        "cassualities": 59,
                         "name": "NUSA TENGGARA TIMUR",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -5532,7 +5767,8 @@
                     "id": 51,
                     "properties": {
                         "ID": 18,
-                        "density": 51,
+                        "density": 29,
+                        "cassualities": 25,
                         "name": "BALI",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -5996,7 +6232,8 @@
                     "id": 14,
                     "properties": {
                         "ID": 19,
-                        "density": 14,
+                        "density": 20,
+                        "cassualities": 14,
                         "name": "RIAU",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -7463,6 +7700,7 @@
                     "properties": {
                         "ID": 76,
                         "density": 21,
+                        "cassualities": 34,
                         "name": "KEPULAUAN RIAU",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -7574,7 +7812,8 @@
                     "id": 76,
                     "properties": {
                         "ID": 77,
-                        "density": 76,
+                        "density": 2,
+                        "cassualities": 1,
                         "name": "SULAWESI BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -8108,7 +8347,8 @@
                     "id": 72,
                     "properties": {
                         "ID": 20,
-                        "density": 72,
+                        "density": 6,
+                        "cassualities": 9,
                         "name": "SULAWESI TENGAH",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -8304,7 +8544,8 @@
                     "id": 71,
                     "properties": {
                         "ID": 22,
-                        "density": 71,
+                        "density": 12,
+                        "cassualities": 12,
                         "name": "SULAWESI UTARA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -10615,7 +10856,8 @@
                     "id": 92,
                     "properties": {
                         "ID": 23,
-                        "density": 92,
+                        "density": 14,
+                        "cassualities": 20,
                         "name": "PAPUA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -10930,7 +11172,8 @@
                     "id": 12,
                     "properties": {
                         "ID": 24,
-                        "density": 12,
+                        "density": 54,
+                        "cassualities": 64,
                         "name": "SUMATERA UTARA",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11106,7 +11349,8 @@
                     "id": 19,
                     "properties": {
                         "ID": 25,
-                        "density": 19,
+                        "density": 13,
+                        "cassualities": 15,
                         "name": "BANGKA BELITUNG",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11362,7 +11606,8 @@
                     "id": 13,
                     "properties": {
                         "ID": 26,
-                        "density": 13,
+                        "density": 11,
+                        "cassualities": 13,
                         "name": "SUMATERA BARAT",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11600,7 +11845,8 @@
                     "id": 16,
                     "properties": {
                         "ID": 28,
-                        "density": 16,
+                        "density": 81,
+                        "cassualities": 79,
                         "name": "SUMATERA SELATAN",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11760,7 +12006,8 @@
                     "id": 15,
                     "properties": {
                         "ID": 29,
-                        "density": 15,
+                        "density": 9,
+                        "cassualities": 2,
                         "name": "JAMBI",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -11913,7 +12160,8 @@
                     "id": 18,
                     "properties": {
                         "ID": 30,
-                        "density": 18,
+                        "density": 26,
+                        "cassualities": 35,
                         "name": "LAMPUNG",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -12057,7 +12305,8 @@
                     "id": 17,
                     "properties": {
                         "ID": 31,
-                        "density": 17,
+                        "density": 29,
+                        "cassualities": 33,
                         "name": "BENGKULU",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -12285,7 +12534,8 @@
                     "id": 11,
                     "properties": {
                         "ID": 32,
-                        "density": 11,
+                        "density": 29,
+                        "cassualities": 30,
                         "name": "DI. ACEH",
                         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000"
                     }
@@ -13778,7 +14028,8 @@
                     "id": 61,
                     "properties": {
                         "ID": 12,
-                        "density": 61,
+                        "density": 26,
+                        "cassualities": 25,
                         "name": "KALIMANTAN BARAT",
                         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)"
                     }
@@ -14563,7 +14814,8 @@
                     },
                     "properties": {
                         "ID": 27,
-                        "density": 62,
+                        "density": 35,
+                        "cassualities": 33,
                         "name": "KALIMANTAN TENGAH",
                         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)"
                     }
@@ -15178,7 +15430,8 @@
                     "id": 63,
                     "properties": {
                         "ID": 11,
-                        "density": 63,
+                        "density": 38,
+                        "cassualities": 38,
                         "name": "KALIMANTAN SELATAN",
                         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)"
                     }
@@ -17067,7 +17320,8 @@
                     "id": 64,
                     "properties": {
                         "ID": 21,
-                        "density": 64,
+                        "density": 20,
+                        "cassualities": 27,
                         "name": "KALIMANTAN TIMUR",
                         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)"
                     }
@@ -18653,7 +18907,8 @@
                     "id": 65,
                     "properties": {
                         "ID": 33,
-                        "density": 65,
+                        "density": 11,
+                        "cassualities": 16,
                         "name": "KALIMANTAN UTARA",
                         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)"
                     }
@@ -18663,7 +18918,7 @@
         };
     </script>
     <script type="text/javascript">
-        var map = L.map('map').setView([0.7893, 113.9213], 6);
+        var map = L.map('map').setView([-2.025, 118.0813], 5);
 
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -18681,7 +18936,7 @@
 
         info.update = function(props) {
             this._div.innerHTML = '<h4>Collective Violence Early Warning (CVEW) Dataset </h4>' + (props ?
-                '<b>' + props.name + '</b><br />' + props.density + ' Violence ' : 'Hover over a Province');
+                '<b>' + props.name + '</b><br />' + props.density + ' Occurence ' + '<br />' + props.cassualities + ' Casualties ' : 'Hover over a Province');
         };
 
         info.addTo(map);
@@ -18689,13 +18944,10 @@
 
         // get color depending on population density value
         function getColor(d) {
-            return d > 1000 ? '#800026' :
-                d > 500 ? '#BD0026' :
-                d > 200 ? '#E31A1C' :
-                d > 100 ? '#FC4E2A' :
-                d > 50 ? '#FD8D3C' :
-                d > 20 ? '#FEB24C' :
-                d > 10 ? '#FED976' : '#FFEDA0';
+            return d > 150 ? '#e93e3a' :
+                d > 100 ? '#ed683c' :
+                d > 50 ? '#f3903f' :
+                d > 10 ? '#fdc70c' : '#fff33b';
         }
 
         function style(feature) {
@@ -18704,7 +18956,7 @@
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 0.7,
+                fillOpacity: 0.8,
                 fillColor: getColor(feature.properties.density)
             };
         }
@@ -18751,7 +19003,7 @@
             onEachFeature: onEachFeature
         }).addTo(map);
 
-        map.attributionControl.addAttribution('Collective Violence Early Warning (CVEW) Dataset &copy; <a href="https://csis.or.id/">Centre for STrategic and International Studies</a>');
+        map.attributionControl.addAttribution('Collective Violence Early Warning (CVEW) Dataset &copy; <a href="https://csis.or.id/">Centre for Strategic and International Studies</a>');
 
 
         var legend = L.control({
@@ -18761,7 +19013,7 @@
         legend.onAdd = function(map) {
 
             var div = L.DomUtil.create('div', 'info legend');
-            var grades = [0, 10, 20, 50, 100, 200, 500, 1000];
+            var grades = [0, 10, 50, 100, 150];
             var labels = [];
             var from, to;
 
@@ -18780,9 +19032,10 @@
 
         legend.addTo(map);
     </script>
-
-
-
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNSY7QC7K1"></script>
+    
 </body>
+
 
 </html>
